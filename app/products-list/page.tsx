@@ -1,6 +1,6 @@
+import { Suspense } from "react";
 import { Metadata } from "next";
 import ProductList from "./components/ProductList";
-import Filter from "./components/Filter";
 
 export const metadata: Metadata = {
   title: "Products List",
@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 const ProductListPage = () => {
   return (
-    <>
+    <Suspense fallback={null}>
       <ProductList />
-    </>
+    </Suspense>
   );
 };
 
