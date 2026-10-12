@@ -1,16 +1,14 @@
 import { Star, BadgeCheck, Truck, Package } from "lucide-react";
 import { BsWhatsapp } from "react-icons/bs";
-import { Product, WHATSAPP_NUMBER, formatPrice } from "./product.data";
+
 import InquiryModel from "@/app/components/InquiryModel";
 import ThemeBtnOne from "@/app/components/ThemeBtnOne";
+import { formatPrice, Product } from "./product.data";
 
 const ProductInfo = ({ product }: { product: Product }) => {
   const discount = Math.round(
     ((product.mrp - product.price) / product.mrp) * 100,
   );
-  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    `Hello, I would like to enquire about ${product.name}.`,
-  )}`;
 
   return (
     <div className="min-w-0">
@@ -95,7 +93,7 @@ const ProductInfo = ({ product }: { product: Product }) => {
 
         <ThemeBtnOne
           text="Chat on WhatsApp"
-          url={`/whatsapp?phone=${product.phone}`}
+          url={`/whatsapp?phone=`}
           icon={<BsWhatsapp size={16} />}
           className="py-3 px-4 mt-3  rounded-full cursor-pointer border border-green-700 text-xs  font-serif bg-white text-black"
         />
